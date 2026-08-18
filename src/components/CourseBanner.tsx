@@ -39,7 +39,16 @@ export const CourseBanner: React.FC<CourseBannerProps> = ({ onNavigate }) => {
             </div>
 
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '4px', flexWrap: 'wrap' }}>
+              <div 
+                className="course-banner-meta"
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.65rem', 
+                  marginBottom: '6px', 
+                  flexWrap: 'wrap' 
+                }}
+              >
                 <span style={{
                   backgroundColor: '#F5B800',
                   color: '#000000',
@@ -57,17 +66,20 @@ export const CourseBanner: React.FC<CourseBannerProps> = ({ onNavigate }) => {
                   <span>15 August 2026</span>
                   <span>•</span>
                   <MapPin size={13} color="#F5B800" />
-                  <span>GrandWest Auditorium, CT</span>
+                  <span>Cape Town, Western Cape</span>
                 </div>
               </div>
 
-              <h3 style={{
-                fontFamily: 'Montserrat',
-                fontWeight: 900,
-                fontSize: 'clamp(1.05rem, 2.2vw, 1.25rem)',
-                color: '#FFFFFF',
-                lineHeight: 1.25
-              }}>
+              <h3 
+                className="course-banner-title"
+                style={{
+                  fontFamily: 'Montserrat',
+                  fontWeight: 900,
+                  fontSize: 'clamp(1.05rem, 2.2vw, 1.25rem)',
+                  color: '#FFFFFF',
+                  lineHeight: 1.25
+                }}
+              >
                 IKAPA FLEET MASTERCLASS: <span style={{ color: '#F5B800' }}>BUY WORKSHOP TICKETS</span>
               </h3>
             </div>
@@ -118,6 +130,14 @@ export const CourseBanner: React.FC<CourseBannerProps> = ({ onNavigate }) => {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
+          }
+          .course-banner-meta {
+            justify-content: center !important;
+            margin-bottom: 0.5rem !important;
+          }
+          .course-banner-title {
+            text-align: center !important;
           }
           .course-banner-right {
             width: 100% !important;

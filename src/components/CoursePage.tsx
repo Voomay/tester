@@ -20,7 +20,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
       title: ticketDetails.title,
       price: ticketDetails.price,
       date: '15 Aug 2026',
-      location: 'GrandWest Auditorium, CT'
+      location: 'Cape Town, Western Cape'
     });
   };
 
@@ -141,7 +141,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#FFFFFF', fontSize: '0.82rem', fontWeight: 600 }}>
                   <MapPin size={16} color="#F5B800" />
-                  <span>GrandWest Auditorium, Cape Town</span>
+                  <span>Cape Town, Western Cape</span>
                 </div>
               </div>
             </div>

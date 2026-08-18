@@ -99,43 +99,51 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
         }} className="about-story-grid">
           {/* Left Visual Card */}
           <div style={{ gridColumn: 'span 6', display: 'flex' }} className="about-col">
-            <div style={{ 
-              position: 'relative', 
-              borderRadius: '12px', 
-              overflow: 'hidden', 
-              border: '1.5px solid #F5B800',
-              width: '100%',
-              minHeight: '340px',
-              display: 'flex',
-              flexDirection: 'column',
-              boxShadow: '0 12px 35px rgba(0, 0, 0, 0.7)'
-            }}>
+            <div 
+              className="about-story-card"
+              style={{ 
+                position: 'relative', 
+                borderRadius: '12px', 
+                overflow: 'hidden', 
+                border: '1.5px solid #F5B800',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 12px 35px rgba(0, 0, 0, 0.7)',
+                backgroundColor: '#070A11'
+              }}
+            >
               <img 
                 src="/assets/ikapa_fleet_hero.jpg" 
                 alt="IKAPA Fleet in Cape Town"
+                className="about-story-img"
                 style={{ 
                   width: '100%', 
                   height: '100%', 
                   minHeight: '320px',
                   objectFit: 'cover', 
+                  objectPosition: 'center center',
                   display: 'block' 
                 }}
               />
-              <div style={{
-                position: 'absolute',
-                bottom: '12px',
-                left: '12px',
-                right: '12px',
-                backgroundColor: 'rgba(7, 10, 17, 0.94)',
-                border: '1px solid rgba(245, 184, 0, 0.4)',
-                borderRadius: '8px',
-                padding: '0.75rem 0.9rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-                backdropFilter: 'blur(8px)',
-                boxShadow: '0 6px 20px rgba(0, 0, 0, 0.7)'
-              }}>
+              <div 
+                className="about-story-badge"
+                style={{
+                  position: 'absolute',
+                  bottom: '12px',
+                  left: '12px',
+                  right: '12px',
+                  backgroundColor: 'rgba(7, 10, 17, 0.94)',
+                  border: '1px solid rgba(245, 184, 0, 0.4)',
+                  borderRadius: '8px',
+                  padding: '0.75rem 0.9rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  backdropFilter: 'blur(8px)',
+                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.7)'
+                }}
+              >
                 <Award size={28} color="#F5B800" style={{ flexShrink: 0 }} />
                 <div>
                   <h4 style={{ fontFamily: 'Montserrat', fontWeight: 900, color: '#FFFFFF', fontSize: '0.85rem', lineHeight: 1.2 }}>
@@ -277,6 +285,25 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           }
           .about-col {
             grid-column: span 12 !important;
+          }
+          .about-story-card {
+            min-height: auto !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+          }
+          .about-story-img {
+            min-height: auto !important;
+            height: auto !important;
+            aspect-ratio: 16/9 !important;
+            object-fit: cover !important;
+            object-position: center bottom !important;
+          }
+          .about-story-badge {
+            position: relative !important;
+            bottom: auto !important;
+            left: auto !important;
+            right: auto !important;
+            margin: 0.5rem !important;
           }
           .stats-grid {
             grid-template-columns: repeat(2, 1fr) !important;

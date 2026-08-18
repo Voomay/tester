@@ -83,30 +83,36 @@ export const WhyPartner: React.FC = () => {
               className="why-item"
             >
               {/* Circular Gold Icon Ring Container */}
-              <div style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '50%',
-                border: '2px solid #F5B800',
-                background: 'radial-gradient(circle, rgba(245, 184, 0, 0.15) 0%, rgba(7, 10, 17, 0.8) 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1rem',
-                boxShadow: '0 0 15px rgba(245, 184, 0, 0.2)'
-              }}>
+              <div 
+                className="why-partner-icon-wrap"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '50%',
+                  border: '2px solid #F5B800',
+                  background: 'radial-gradient(circle, rgba(245, 184, 0, 0.15) 0%, rgba(7, 10, 17, 0.8) 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem',
+                  boxShadow: '0 0 15px rgba(245, 184, 0, 0.2)'
+                }}
+              >
                 {item.icon}
               </div>
 
-              <h3 style={{
-                fontFamily: 'Montserrat',
-                fontWeight: 800,
-                fontSize: '0.78rem',
-                color: '#FFFFFF',
-                letterSpacing: '0.4px',
-                lineHeight: '1.35',
-                maxWidth: '170px'
-              }}>
+              <h3 
+                className="why-partner-title"
+                style={{
+                  fontFamily: 'Montserrat',
+                  fontWeight: 800,
+                  fontSize: '0.78rem',
+                  color: '#FFFFFF',
+                  letterSpacing: '0.4px',
+                  lineHeight: '1.35',
+                  maxWidth: '170px'
+                }}
+              >
                 {item.title}
               </h3>
             </div>
@@ -122,24 +128,23 @@ export const WhyPartner: React.FC = () => {
           border-right: none;
         }
 
-        @media (max-width: 992px) {
-          .why-partner-grid {
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 1.5rem !important;
-          }
-          .why-partner-grid .why-item {
-            border-right: none !important;
-          }
-        }
-        @media (max-width: 576px) {
+        @media (max-width: 900px) {
           .why-partner-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 1.25rem 0.75rem !important;
           }
-        }
-        @media (max-width: 360px) {
-          .why-partner-grid {
-            grid-template-columns: 1fr !important;
+          .why-partner-grid .why-item {
+            border-right: none !important;
+            padding: 0.5rem 0.25rem !important;
+          }
+          .why-partner-icon-wrap {
+            width: 52px !important;
+            height: 52px !important;
+            margin-bottom: 0.65rem !important;
+          }
+          .why-partner-title {
+            font-size: 0.72rem !important;
+            max-width: 100% !important;
           }
         }
       `}</style>
