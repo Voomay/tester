@@ -45,10 +45,13 @@ export const MetricHighlights: React.FC = () => {
   return (
     <section style={{ padding: '1.5rem 0 2.5rem' }}>
       <div className="container">
-        <div className="gold-box" style={{ overflow: 'hidden' }}>
+        <div className="gold-box" style={{ overflow: 'hidden', border: '2px solid #F5B800', borderRadius: '10px', width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(6, 1fr)',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box'
           }} className="metrics-grid">
             {highlights.map((item, idx) => (
               <div 
@@ -103,11 +106,13 @@ export const MetricHighlights: React.FC = () => {
 
         @media (max-width: 900px) {
           .metrics-grid {
-            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
           }
           .metrics-grid .metric-cell {
             border-right: 1px solid rgba(245, 184, 0, 0.2) !important;
             border-bottom: 1px solid rgba(245, 184, 0, 0.2) !important;
+            box-sizing: border-box !important;
+            min-width: 0 !important;
           }
           .metrics-grid .metric-cell:nth-child(3n) {
             border-right: none !important;
@@ -116,10 +121,12 @@ export const MetricHighlights: React.FC = () => {
 
         @media (max-width: 550px) {
           .metrics-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
           .metrics-grid .metric-cell {
             padding: 1.15rem 0.5rem !important;
+            box-sizing: border-box !important;
+            min-width: 0 !important;
           }
           .metrics-grid .metric-cell:nth-child(3n) {
             border-right: 1px solid rgba(245, 184, 0, 0.2) !important;

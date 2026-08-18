@@ -132,7 +132,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <input 
                   type="text" 
                   required
-                  placeholder="e.g. Cheslin Gabriels"
+                  placeholder="Your Full Name"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   style={{
@@ -156,7 +156,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   <input 
                     type="tel" 
                     required
-                    placeholder="e.g. 082 549 0398"
+                    placeholder="082 123 4567"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     style={{
@@ -178,7 +178,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   </label>
                   <input 
                     type="email" 
-                    placeholder="e.g. name@example.com"
+                    placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     style={{

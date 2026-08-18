@@ -19,13 +19,16 @@ export const InvestBanner: React.FC<InvestBannerProps> = ({ onOpenModal }) => {
               url('/assets/ikapa_invest_car.jpg')
             `,
             backgroundSize: 'cover',
-            backgroundPosition: 'center 40%',
+            backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
-            border: '1.5px solid rgba(245, 184, 0, 0.45)',
+            border: '2px solid #F5B800',
             borderRadius: '14px',
             padding: '3.25rem 3.5rem',
             overflow: 'hidden',
-            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 184, 0, 0.12)'
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 184, 0, 0.15)',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box'
           }}
         >
           {/* Subtle Ambient Radial Glow on Left */}
@@ -34,6 +37,7 @@ export const InvestBanner: React.FC<InvestBannerProps> = ({ onOpenModal }) => {
             top: '-50px',
             left: '-50px',
             width: '350px',
+            maxWidth: '100vw',
             height: '350px',
             background: 'radial-gradient(circle, rgba(245, 184, 0, 0.12) 0%, transparent 70%)',
             pointerEvents: 'none'
@@ -186,7 +190,13 @@ export const InvestBanner: React.FC<InvestBannerProps> = ({ onOpenModal }) => {
             margin-right: auto;
           }
           .invest-banner-card {
-            padding: 2.25rem 1.35rem !important;
+            padding: 2rem 1.15rem !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            margin: 0 auto !important;
+            border: 2px solid #F5B800 !important;
+            background-position: center center !important;
             background-image: 
               linear-gradient(180deg, rgba(6, 9, 16, 0.96) 0%, rgba(6, 9, 16, 0.88) 50%, rgba(6, 9, 16, 0.98) 100%),
               url('/assets/ikapa_invest_car.jpg') !important;

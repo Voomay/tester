@@ -291,8 +291,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onOpenM
 
         @media (max-width: 900px) {
           .header-logo-img {
-            height: 44px;
-            max-width: 210px;
+            height: 52px;
+            max-width: 250px;
           }
           .header-cta-btn {
             font-size: 0.76rem;
@@ -302,8 +302,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onOpenM
 
         @media (max-width: 480px) {
           .header-logo-img {
-            height: 38px;
-            max-width: 170px;
+            height: 48px;
+            max-width: 220px;
           }
           .header-cta-btn {
             display: none; /* Keep clean on small mobile, accessible via prominent mobile menu button */

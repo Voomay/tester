@@ -83,6 +83,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           top: '-40px',
           left: '15%',
           width: '450px',
+          maxWidth: '100vw',
           height: '220px',
           background: 'radial-gradient(circle, rgba(245, 184, 0, 0.15) 0%, transparent 70%)',
           pointerEvents: 'none'
@@ -476,11 +477,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             style={{
               width: '100%',
               height: '380px',
-              border: 0,
+              border: '2px solid #F5B800',
               borderRadius: '12px',
               display: 'block',
               filter: 'contrast(1.05) brightness(0.92)',
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)'
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 184, 0, 0.15)',
+              boxSizing: 'border-box'
             }}
             allowFullScreen={true}
             loading="lazy"
@@ -498,14 +500,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             margin-bottom: 2rem !important;
           }
           .contact-cards-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
           .contact-main-grid {
-            grid-template-columns: repeat(1, 1fr) !important;
+            grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
             gap: 1.5rem !important;
           }
           .contact-form-col, .contact-faq-col {
             grid-column: span 12 !important;
+            min-width: 0 !important;
           }
           .contact-map-frame {
             height: 300px !important;
@@ -513,10 +516,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
         }
         @media (max-width: 550px) {
           .contact-cards-grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: minmax(0, 1fr) !important;
           }
           .contact-inputs-row {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: minmax(0, 1fr) !important;
           }
           .contact-map-frame {
             height: 260px !important;

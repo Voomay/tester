@@ -130,12 +130,17 @@ export const WhyPartner: React.FC = () => {
 
         @media (max-width: 900px) {
           .why-partner-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             gap: 1.25rem 0.75rem !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
           }
           .why-partner-grid .why-item {
             border-right: none !important;
             padding: 0.5rem 0.25rem !important;
+            box-sizing: border-box !important;
+            min-width: 0 !important;
           }
           .why-partner-icon-wrap {
             width: 52px !important;

@@ -7,14 +7,16 @@ export const PartnerBanner: React.FC = () => {
         <div style={{
           backgroundColor: '#FFFFFF',
           borderRadius: '8px',
-          border: '1px solid rgba(245, 184, 0, 0.5)',
+          border: '2px solid #F5B800',
           padding: '1.5rem 2.5rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '2rem',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 184, 0, 0.1)',
-          width: '100%'
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 184, 0, 0.15)',
+          width: '100%',
+          maxWidth: '100%',
+          boxSizing: 'border-box'
         }} className="partner-banner-inner">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="partner-title-wrap">
             <span style={{
@@ -102,8 +104,13 @@ export const PartnerBanner: React.FC = () => {
           .partner-banner-inner {
             flex-direction: column !important;
             gap: 1.25rem !important;
-            padding: 1.35rem 1.25rem !important;
+            padding: 1.35rem 1.1rem !important;
             text-align: center;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            margin: 0 auto !important;
+            border: 2px solid #F5B800 !important;
           }
           .partner-title-wrap {
             justify-content: center !important;

@@ -50,6 +50,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
           top: '-40px',
           left: '15%',
           width: '450px',
+          maxWidth: '100vw',
           height: '220px',
           background: 'radial-gradient(circle, rgba(245, 184, 0, 0.15) 0%, transparent 70%)',
           pointerEvents: 'none'
@@ -257,10 +258,26 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '1.5rem',
-            marginBottom: '3rem'
+            marginBottom: '3rem',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box'
           }} className="tickets-grid">
             {/* Standard Ticket */}
-            <div className="gold-box ticket-card" style={{ padding: '1.85rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div 
+              className="gold-box ticket-card" 
+              style={{ 
+                padding: '1.85rem 1.4rem', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                borderRadius: '12px',
+                border: '1.5px solid rgba(245, 184, 0, 0.7)',
+                width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box'
+              }}
+            >
               <div>
                 <span style={{ color: '#94A3B8', fontFamily: 'Montserrat', fontWeight: 700, fontSize: '0.78rem' }}>STANDARD ACCESS</span>
                 <h3 style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '1.3rem', color: '#FFFFFF', marginTop: '4px' }}>
@@ -278,7 +295,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
               </div>
               <button 
                 onClick={() => handleSelectTicket('standard')}
-                className="btn-gold" 
+                className="btn-gold ticket-action-btn" 
                 style={{ width: '100%', justifyContent: 'center' }}
               >
                 <ShoppingBag size={17} />
@@ -290,20 +307,24 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
             <div 
               className="gold-box ticket-card featured-ticket"
               style={{
-                padding: '1.85rem 1.5rem',
+                padding: '1.85rem 1.4rem',
                 border: '2px solid #F5B800',
+                borderRadius: '12px',
                 background: 'linear-gradient(180deg, rgba(245, 184, 0, 0.08) 0%, rgba(12, 17, 27, 0.95) 100%)',
-                boxShadow: '0 0 30px rgba(245, 184, 0, 0.4)',
+                boxShadow: '0 0 30px rgba(245, 184, 0, 0.35)',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box'
               }}
             >
               <div style={{
                 position: 'absolute',
-                top: '-12px',
-                right: '20px',
+                top: '-11px',
+                right: '16px',
                 background: '#F5B800',
                 color: '#000',
                 fontFamily: 'Montserrat',
@@ -332,7 +353,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
               </div>
               <button 
                 onClick={() => handleSelectTicket('vip')}
-                className="btn-gold" 
+                className="btn-gold ticket-action-btn" 
                 style={{ width: '100%', justifyContent: 'center' }}
               >
                 <ShoppingBag size={17} />
@@ -341,7 +362,20 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
             </div>
 
             {/* Dual Fleet Owner Package */}
-            <div className="gold-box ticket-card" style={{ padding: '1.85rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div 
+              className="gold-box ticket-card" 
+              style={{ 
+                padding: '1.85rem 1.4rem', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                borderRadius: '12px',
+                border: '1.5px solid rgba(245, 184, 0, 0.7)',
+                width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box'
+              }}
+            >
               <div>
                 <span style={{ color: '#94A3B8', fontFamily: 'Montserrat', fontWeight: 700, fontSize: '0.78rem' }}>PARTNER BUNDLE</span>
                 <h3 style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '1.3rem', color: '#FFFFFF', marginTop: '4px' }}>
@@ -359,7 +393,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
               </div>
               <button 
                 onClick={() => handleSelectTicket('dual')}
-                className="btn-gold" 
+                className="btn-gold ticket-action-btn" 
                 style={{ width: '100%', justifyContent: 'center' }}
               >
                 <ShoppingBag size={17} />
@@ -381,6 +415,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
             padding: 1.5rem 1.15rem !important;
             margin-bottom: 2rem !important;
             width: 100% !important;
+            max-width: 100% !important;
             box-sizing: border-box !important;
           }
           .course-hero-grid {
@@ -396,15 +431,26 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
             box-sizing: border-box !important;
           }
           .curriculum-grid, .tickets-grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: minmax(0, 1fr) !important;
             width: 100% !important;
-            gap: 1.25rem !important;
+            max-width: 100% !important;
+            gap: 1.5rem !important;
             box-sizing: border-box !important;
+            margin: 0 auto !important;
           }
           .ticket-card {
             width: 100% !important;
+            max-width: 100% !important;
             box-sizing: border-box !important;
-            padding: 1.5rem 1.15rem !important;
+            padding: 1.4rem 1.1rem !important;
+            margin: 0 auto !important;
+          }
+          .ticket-action-btn {
+            white-space: normal !important;
+            text-align: center !important;
+            padding: 0.75rem 0.75rem !important;
+            font-size: 0.82rem !important;
+            width: 100% !important;
           }
           .featured-ticket {
             transform: none !important;

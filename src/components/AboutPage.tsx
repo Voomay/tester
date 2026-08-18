@@ -34,6 +34,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           top: '-40px',
           left: '15%',
           width: '450px',
+          maxWidth: '100vw',
           height: '220px',
           background: 'radial-gradient(circle, rgba(245, 184, 0, 0.15) 0%, transparent 70%)',
           pointerEvents: 'none'
@@ -100,17 +101,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           {/* Left Visual Card */}
           <div style={{ gridColumn: 'span 6', display: 'flex' }} className="about-col">
             <div 
-              className="about-story-card"
+              className="about-story-card gold-box"
               style={{ 
                 position: 'relative', 
-                borderRadius: '12px', 
+                borderRadius: '8px', 
                 overflow: 'hidden', 
                 border: '1.5px solid #F5B800',
                 width: '100%',
+                maxWidth: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: '0 12px 35px rgba(0, 0, 0, 0.7)',
-                backgroundColor: '#070A11'
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(245, 184, 0, 0.05)',
+                backgroundColor: '#070A11',
+                boxSizing: 'border-box'
               }}
             >
               <img 
@@ -282,9 +285,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           .about-story-grid, .values-grid {
             grid-template-columns: repeat(1, 1fr) !important;
             gap: 2rem !important;
+            margin-bottom: 2.5rem !important;
           }
           .about-col {
             grid-column: span 12 !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
           }
           .about-story-card {
             min-height: auto !important;
@@ -292,13 +299,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
             max-width: 100% !important;
             margin: 0 auto !important;
             box-sizing: border-box !important;
+            border: 1.5px solid #F5B800 !important;
+            border-radius: 8px !important;
           }
           .about-story-img {
             min-height: auto !important;
             height: auto !important;
             width: 100% !important;
-            aspect-ratio: auto !important;
-            object-fit: contain !important;
+            aspect-ratio: 16/10 !important;
+            object-fit: cover !important;
+            object-position: center center !important;
             display: block !important;
           }
           .about-story-badge {

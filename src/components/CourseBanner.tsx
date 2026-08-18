@@ -11,16 +11,19 @@ export const CourseBanner: React.FC<CourseBannerProps> = ({ onNavigate }) => {
       <div className="container">
         <div style={{
           background: 'linear-gradient(135deg, #101726 0%, #1A2338 100%)',
-          border: '1.5px solid #F5B800',
+          border: '2px solid #F5B800',
           borderRadius: '12px',
           padding: '1.75rem 2rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '1.5rem',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6)',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 184, 0, 0.15)',
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          width: '100%',
+          maxWidth: '100%',
+          boxSizing: 'border-box'
         }} className="course-banner-wrap">
           {/* Left info */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }} className="course-banner-left">
@@ -120,7 +123,12 @@ export const CourseBanner: React.FC<CourseBannerProps> = ({ onNavigate }) => {
             flex-direction: column !important;
             text-align: center !important;
             gap: 1.25rem !important;
-            padding: 1.5rem 1.25rem !important;
+            padding: 1.5rem 1.15rem !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            margin: 0 auto !important;
+            border: 2px solid #F5B800 !important;
           }
           .course-banner-left {
             flex-direction: column !important;

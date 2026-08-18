@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, TrendingUp, Clock, ShieldCheck, CheckCircle2, Send } from 'lucide-react';
+import { FleetCarLoop } from './FleetCarLoop';
 
 interface HeroProps {
   onOpenModal: () => void;
@@ -227,13 +228,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 background: 'linear-gradient(145deg, rgba(12, 17, 27, 0.94) 0%, rgba(6, 9, 16, 0.98) 100%), #0C111B',
-                border: '1.5px solid #F5B800',
+                border: '2px solid #F5B800',
                 borderRadius: '14px',
                 padding: '1.4rem 1.5rem',
                 boxShadow: '0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 184, 0, 0.15)',
                 backdropFilter: 'blur(14px)',
                 position: 'relative',
-                zIndex: 10
+                zIndex: 10,
+                boxSizing: 'border-box'
               }}
             >
               <div style={{ marginBottom: '0.85rem', textAlign: 'center' }}>
@@ -499,6 +501,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             </div>
           </div>
         </div>
+
+        {/* Live Animated Car Loop Track under SIGN UP TODAY */}
+        <FleetCarLoop />
       </div>
 
       <style>{`
@@ -591,26 +596,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             max-width: 380px !important;
             margin: 1.25rem auto 0.75rem auto !important;
             position: relative !important;
+            box-sizing: border-box !important;
           }
           .hero-form-card {
             max-width: 100% !important;
+            width: 100% !important;
             padding: 1.25rem 1.15rem !important;
+            box-sizing: border-box !important;
+            border: 2px solid #F5B800 !important;
           }
           .float-top-left {
             top: -14px !important;
-            left: -6px !important;
+            left: 0px !important;
           }
           .float-top-right {
             top: -12px !important;
-            right: -6px !important;
+            right: 0px !important;
           }
           .float-bottom-left {
             bottom: -13px !important;
-            left: -6px !important;
+            left: 0px !important;
           }
           .float-bottom-right {
             bottom: -12px !important;
-            right: -6px !important;
+            right: 0px !important;
           }
         }
 
@@ -629,22 +638,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           }
           .float-top-left {
             top: -12px !important;
-            left: -4px !important;
+            left: 0px !important;
             padding: 0.25rem 0.65rem !important;
           }
           .float-top-right {
             top: -10px !important;
-            right: -4px !important;
+            right: 0px !important;
             padding: 0.25rem 0.55rem !important;
           }
           .float-bottom-left {
             bottom: -12px !important;
-            left: -4px !important;
+            left: 0px !important;
             padding: 0.25rem 0.65rem 0.25rem 0.25rem !important;
           }
           .float-bottom-right {
             bottom: -10px !important;
-            right: -4px !important;
+            right: 0px !important;
             padding: 0.25rem 0.55rem !important;
           }
         }

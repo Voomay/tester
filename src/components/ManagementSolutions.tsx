@@ -57,10 +57,13 @@ export const ManagementSolutions: React.FC = () => {
         </div>
 
         {/* Box Container */}
-        <div className="gold-box" style={{ overflow: 'hidden' }}>
+        <div className="gold-box" style={{ overflow: 'hidden', border: '2px solid #F5B800', borderRadius: '10px', width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(7, 1fr)',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box'
           }} className="solutions-grid">
             {solutions.map((item, idx) => (
               <div 
@@ -127,11 +130,13 @@ export const ManagementSolutions: React.FC = () => {
 
         @media (max-width: 1024px) {
           .solutions-grid {
-            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
           }
           .solutions-grid .solution-card {
             border-right: 1px solid rgba(245, 184, 0, 0.2) !important;
             border-bottom: 1px solid rgba(245, 184, 0, 0.2) !important;
+            box-sizing: border-box !important;
+            min-width: 0 !important;
           }
           .solutions-grid .solution-card:nth-child(3n) {
             border-right: none !important;
@@ -140,12 +145,14 @@ export const ManagementSolutions: React.FC = () => {
 
         @media (max-width: 640px) {
           .solutions-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
           .solutions-grid .solution-card {
             padding: 1.25rem 0.85rem !important;
             border-right: 1px solid rgba(245, 184, 0, 0.2) !important;
             border-bottom: 1px solid rgba(245, 184, 0, 0.2) !important;
+            box-sizing: border-box !important;
+            min-width: 0 !important;
           }
           .solutions-grid .solution-card:nth-child(2n) {
             border-right: none !important;
@@ -158,11 +165,13 @@ export const ManagementSolutions: React.FC = () => {
 
         @media (max-width: 420px) {
           .solutions-grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: minmax(0, 1fr) !important;
           }
           .solutions-grid .solution-card {
             border-right: none !important;
             border-bottom: 1px solid rgba(245, 184, 0, 0.2) !important;
+            box-sizing: border-box !important;
+            min-width: 0 !important;
           }
           .solutions-grid .solution-card:last-child {
             grid-column: span 1;
