@@ -282,34 +282,52 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
             padding-bottom: 3rem !important;
             margin-bottom: 2rem !important;
           }
-          .about-story-grid, .values-grid {
-            grid-template-columns: repeat(1, 1fr) !important;
+          .about-story-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
             gap: 2rem !important;
             margin-bottom: 2.5rem !important;
           }
-          .about-col {
-            grid-column: span 12 !important;
+          .values-grid {
+            display: flex !important;
+            flex-direction: column !important;
             width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            gap: 1.5rem !important;
+          }
+          .about-col {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
             padding: 0 !important;
             margin: 0 !important;
+            grid-column: unset !important;
           }
           .about-story-card {
             min-height: auto !important;
             width: 100% !important;
             max-width: 100% !important;
-            margin: 0 auto !important;
+            margin: 0 !important;
             box-sizing: border-box !important;
             border: 1.5px solid #F5B800 !important;
             border-radius: 8px !important;
+            overflow: hidden !important;
           }
           .about-story-img {
             min-height: auto !important;
             height: auto !important;
             width: 100% !important;
+            max-width: 100% !important;
             aspect-ratio: 16/10 !important;
             object-fit: cover !important;
             object-position: center center !important;
             display: block !important;
+            box-sizing: border-box !important;
           }
           .about-story-badge {
             position: relative !important;
@@ -318,6 +336,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
             right: auto !important;
             margin: 0.75rem !important;
             padding: 0.75rem 0.85rem !important;
+            width: calc(100% - 1.5rem) !important;
+            box-sizing: border-box !important;
             background-color: rgba(7, 10, 17, 0.96) !important;
           }
           .stats-grid {
