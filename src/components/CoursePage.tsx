@@ -106,7 +106,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
           boxShadow: '0 20px 40px rgba(0, 0, 0, 0.7)',
           overflow: 'hidden'
         }} className="course-hero-banner">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '2rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '2rem', alignItems: 'center' }} className="course-hero-grid">
             <div style={{ gridColumn: 'span 8' }} className="course-hero-text">
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F5B800', color: '#000', fontFamily: 'Montserrat', fontWeight: 900, fontSize: '0.75rem', padding: '4px 12px', borderRadius: '4px', marginBottom: '1rem', letterSpacing: '1px' }}>
                 <Ticket size={14} />
@@ -378,13 +378,33 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
             margin-bottom: 2rem !important;
           }
           .course-hero-banner {
-            padding: 1.75rem 1.25rem !important;
+            padding: 1.5rem 1.15rem !important;
+            margin-bottom: 2rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
           }
-          .curriculum-grid, .tickets-grid {
-            grid-template-columns: repeat(1, 1fr) !important;
+          .course-hero-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 1.5rem !important;
           }
           .course-hero-text, .course-hero-cta {
             grid-column: span 12 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+          }
+          .curriculum-grid, .tickets-grid {
+            grid-template-columns: 1fr !important;
+            width: 100% !important;
+            gap: 1.25rem !important;
+            box-sizing: border-box !important;
+          }
+          .ticket-card {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 1.5rem 1.15rem !important;
           }
           .featured-ticket {
             transform: none !important;
@@ -394,6 +414,8 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onAddToCart, onNavigate 
           .event-meta-ribbon {
             flex-direction: column !important;
             gap: 0.65rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
           }
         }
       `}</style>

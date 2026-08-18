@@ -288,22 +288,27 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           }
           .about-story-card {
             min-height: auto !important;
+            width: 100% !important;
             max-width: 100% !important;
             margin: 0 auto !important;
+            box-sizing: border-box !important;
           }
           .about-story-img {
             min-height: auto !important;
             height: auto !important;
-            aspect-ratio: 16/9 !important;
-            object-fit: cover !important;
-            object-position: center bottom !important;
+            width: 100% !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            display: block !important;
           }
           .about-story-badge {
             position: relative !important;
             bottom: auto !important;
             left: auto !important;
             right: auto !important;
-            margin: 0.5rem !important;
+            margin: 0.75rem !important;
+            padding: 0.75rem 0.85rem !important;
+            background-color: rgba(7, 10, 17, 0.96) !important;
           }
           .stats-grid {
             grid-template-columns: repeat(2, 1fr) !important;
