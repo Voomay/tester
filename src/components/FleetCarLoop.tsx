@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Gauge, Zap, Sparkles, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Gauge, Zap } from 'lucide-react';
 
 export const FleetCarLoop: React.FC = () => {
   const [speedBoost, setSpeedBoost] = useState(false);
@@ -42,13 +42,14 @@ export const FleetCarLoop: React.FC = () => {
               fontWeight: 800,
               fontSize: '0.68rem',
               letterSpacing: '1.2px',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              whiteSpace: 'nowrap'
             }}>
               DUAL-LANE ACTIVE FLEET
             </span>
           </div>
 
-          <span style={{ color: '#94A3B8', fontSize: '0.74rem', fontFamily: 'Montserrat', fontWeight: 600 }} className="loop-subheading">
+          <span style={{ color: '#94A3B8', fontSize: '0.74rem', fontFamily: 'Montserrat', fontWeight: 600, whiteSpace: 'nowrap' }} className="loop-subheading">
             Opposing Highway Lanes • Slow & Fast Acceleration
           </span>
         </div>
@@ -72,12 +73,13 @@ export const FleetCarLoop: React.FC = () => {
               cursor: 'pointer',
               transition: 'all 0.25s ease',
               boxShadow: speedBoost ? '0 0 15px rgba(245, 184, 0, 0.5)' : 'none',
-              touchAction: 'manipulation'
+              touchAction: 'manipulation',
+              whiteSpace: 'nowrap'
             }}
             title="Toggle Speed Boost"
           >
             {speedBoost ? <Zap size={13} fill="#000" /> : <Gauge size={13} />}
-            <span>{speedBoost ? 'TURBO SPEED' : 'SLOW ➔ FAST CRUISE'}</span>
+            <span style={{ whiteSpace: 'nowrap' }}>{speedBoost ? 'TURBO SPEED' : 'SLOW ➔ FAST CRUISE'}</span>
           </button>
         </div>
       </div>
@@ -107,7 +109,7 @@ export const FleetCarLoop: React.FC = () => {
           pointerEvents: 'none'
         }} />
 
-        {/* Top Outer Highway Border */}
+        {/* Top Outer Highway Border Line */}
         <div style={{
           position: 'absolute',
           top: '8px',
@@ -116,23 +118,6 @@ export const FleetCarLoop: React.FC = () => {
           height: '1px',
           background: 'linear-gradient(90deg, transparent 0%, rgba(245, 184, 0, 0.3) 10%, rgba(245, 184, 0, 0.3) 90%, transparent 100%)'
         }} />
-
-        {/* TOP LANE: Direction Indicators (Left to Right ➔) */}
-        <div style={{
-          position: 'absolute',
-          top: '12px',
-          left: '20px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.35rem',
-          opacity: 0.22,
-          pointerEvents: 'none'
-        }}>
-          <span style={{ color: '#38BDF8', fontFamily: 'Montserrat', fontWeight: 900, fontSize: '0.62rem', letterSpacing: '1.5px' }}>
-            TOP LANE ➔
-          </span>
-          <ArrowRight size={12} color="#38BDF8" />
-        </div>
 
         {/* CENTER ANIMATED DASHED YELLOW DIVIDER */}
         <div 
@@ -150,24 +135,7 @@ export const FleetCarLoop: React.FC = () => {
           }}
         />
 
-        {/* BOTTOM LANE: Direction Indicators (Right to Left ←) */}
-        <div style={{
-          position: 'absolute',
-          bottom: '12px',
-          right: '20px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.35rem',
-          opacity: 0.22,
-          pointerEvents: 'none'
-        }}>
-          <ArrowLeft size={12} color="#F5B800" />
-          <span style={{ color: '#F5B800', fontFamily: 'Montserrat', fontWeight: 900, fontSize: '0.62rem', letterSpacing: '1.5px' }}>
-            BOTTOM LANE ←
-          </span>
-        </div>
-
-        {/* Bottom Outer Highway Border */}
+        {/* Bottom Outer Highway Border Line */}
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -189,35 +157,43 @@ export const FleetCarLoop: React.FC = () => {
             top: '16px',
             zIndex: 10,
             pointerEvents: 'none',
-            display: 'flex',
+            display: 'inline-flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            whiteSpace: 'nowrap',
+            width: 'max-content',
+            minWidth: 'max-content',
+            flexShrink: 0
           }}
         >
-          {/* HUD Tag */}
+          {/* HUD Tag - strictly 1 line, never wraps */}
           <div 
             style={{
-              backgroundColor: 'rgba(7, 10, 17, 0.9)',
+              backgroundColor: 'rgba(7, 10, 17, 0.92)',
               border: '1px solid #38BDF8',
               borderRadius: '8px',
               padding: '1px 6px',
               marginBottom: '2px',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               gap: '4px',
-              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.7)'
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.7)',
+              whiteSpace: 'nowrap',
+              width: 'max-content',
+              minWidth: 'max-content',
+              flexShrink: 0
             }}
           >
-            <span style={{ color: '#38BDF8', fontSize: '0.55rem', fontFamily: 'Montserrat', fontWeight: 900 }}>
+            <span style={{ color: '#38BDF8', fontSize: '0.55rem', fontFamily: 'Montserrat', fontWeight: 900, whiteSpace: 'nowrap', display: 'inline-block' }}>
               IKAPA #02
             </span>
-            <span style={{ color: '#CBD5E1', fontSize: '0.5rem', fontFamily: 'Montserrat', fontWeight: 700 }}>
+            <span style={{ color: '#CBD5E1', fontSize: '0.5rem', fontFamily: 'Montserrat', fontWeight: 700, whiteSpace: 'nowrap', display: 'inline-block' }}>
               COROLLA
             </span>
           </div>
 
           {/* Vehicle Body (Flipped horizontally to face Right ➔) */}
-          <div style={{ position: 'relative', display: 'inline-block' }}>
+          <div style={{ position: 'relative', display: 'inline-block', flexShrink: 0 }}>
             <img 
               src="/assets/ikapa_car_corolla.png" 
               alt="IKAPA Fleet Corolla" 
@@ -257,35 +233,43 @@ export const FleetCarLoop: React.FC = () => {
             top: '84px',
             zIndex: 10,
             pointerEvents: 'none',
-            display: 'flex',
+            display: 'inline-flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            whiteSpace: 'nowrap',
+            width: 'max-content',
+            minWidth: 'max-content',
+            flexShrink: 0
           }}
         >
-          {/* HUD Tag */}
+          {/* HUD Tag - strictly 1 line, never wraps */}
           <div 
             style={{
-              backgroundColor: 'rgba(7, 10, 17, 0.9)',
+              backgroundColor: 'rgba(7, 10, 17, 0.92)',
               border: '1px solid #F5B800',
               borderRadius: '8px',
               padding: '1px 6px',
               marginBottom: '2px',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               gap: '4px',
-              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.7)'
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.7)',
+              whiteSpace: 'nowrap',
+              width: 'max-content',
+              minWidth: 'max-content',
+              flexShrink: 0
             }}
           >
-            <span style={{ color: '#F5B800', fontSize: '0.55rem', fontFamily: 'Montserrat', fontWeight: 900 }}>
+            <span style={{ color: '#F5B800', fontSize: '0.55rem', fontFamily: 'Montserrat', fontWeight: 900, whiteSpace: 'nowrap', display: 'inline-block' }}>
               IKAPA #01
             </span>
-            <span style={{ color: '#CBD5E1', fontSize: '0.5rem', fontFamily: 'Montserrat', fontWeight: 700 }}>
+            <span style={{ color: '#CBD5E1', fontSize: '0.5rem', fontFamily: 'Montserrat', fontWeight: 700, whiteSpace: 'nowrap', display: 'inline-block' }}>
               S-PRESSO
             </span>
           </div>
 
           {/* Vehicle Body (Natural orientation facing Left ←) */}
-          <div style={{ position: 'relative', display: 'inline-block' }}>
+          <div style={{ position: 'relative', display: 'inline-block', flexShrink: 0 }}>
             <img 
               src="/assets/ikapa_car_spresso.png" 
               alt="IKAPA Fleet S-Presso" 
@@ -310,26 +294,6 @@ export const FleetCarLoop: React.FC = () => {
             }} />
           </div>
         </div>
-
-        {/* Real-time Indicator Footer Accent */}
-        <div style={{
-          position: 'absolute',
-          bottom: '5px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '4px',
-          color: 'rgba(245, 184, 0, 0.35)',
-          fontSize: '0.6rem',
-          fontFamily: 'Montserrat',
-          fontWeight: 800,
-          whiteSpace: 'nowrap',
-          pointerEvents: 'none'
-        }}>
-          <Sparkles size={10} />
-          <span>IKAPA CONSTANT FLEET MOBILITY</span>
-        </div>
       </div>
 
       <style>{`
@@ -353,10 +317,10 @@ export const FleetCarLoop: React.FC = () => {
 
         /* ========================================================
            TOP LANE CAR MOTION (DRIVING LEFT TO RIGHT ➔):
-           0% -> 40%: Slow steady cruising across left-to-mid section
-           40% -> 75%: Sudden fast acceleration surge across mid-to-right!
-           75% -> 100%: Smooth exit and immediate seamless return on left
-           Ensures vehicle is visible on screen continuously!
+           0% -> 38%: Slow steady cruising across left-to-mid section
+           38% -> 72%: Sudden fast acceleration surge across mid-to-right!
+           72% -> 100%: Smooth exit and immediate seamless return on left
+           Ensures vehicle is visible on screen continuously with no vertical shift!
            ======================================================== */
         @keyframes driveTopLaneEast {
           0% {
@@ -390,10 +354,10 @@ export const FleetCarLoop: React.FC = () => {
 
         /* ========================================================
            BOTTOM LANE CAR MOTION (DRIVING RIGHT TO LEFT ←):
-           0% -> 40%: Slow steady cruising across right-to-mid section
-           40% -> 75%: Sudden fast acceleration surge across mid-to-left!
-           75% -> 100%: Smooth exit and immediate seamless return on right
-           Ensures vehicle is visible on screen continuously!
+           0% -> 38%: Slow steady cruising across right-to-mid section
+           38% -> 72%: Sudden fast acceleration surge across mid-to-left!
+           72% -> 100%: Smooth exit and immediate seamless return on right
+           Ensures vehicle is visible on screen continuously with no vertical shift!
            ======================================================== */
         @keyframes driveBottomLaneWest {
           0% {
